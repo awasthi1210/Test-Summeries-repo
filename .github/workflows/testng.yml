@@ -71,7 +71,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: ServiceNow DevOps Unit Test Results
-        uses: ServiceNow/servicenow-devops-test-report@main
+        uses: ServiceNow/servicenow-devops-test-report@v7.0.0
         with:
           devops-integration-token: '${{ secrets.SN_DEVOPS_TOKEN }}'
           # devops-integration-user-name: '${{ secrets.SN_DEVOPS_USER }}'
@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ServiceNow DevOps Register Artifact
-        uses: ServiceNow/servicenow-devops-register-artifact@main
+        uses: ServiceNow/servicenow-devops-register-artifact@v7.0.0
         with:
           # devops-integration-user-name: '${{ secrets.SN_DEVOPS_USER }}'
           # devops-integration-user-password: '${{ secrets.SN_DEVOPS_PASSWORD }}'
@@ -155,7 +155,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ServiceNow DevOps Register Package
-        uses: ServiceNow/servicenow-devops-register-package@main
+        uses: ServiceNow/servicenow-devops-register-package@v7.0.0
         with:
         
           # devops-integration-user-name: '${{ secrets.SN_DEVOPS_USER }}'
@@ -176,7 +176,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ServiceNow DevOps Change Attributes
-        uses: ServiceNow/servicenow-devops-change@main
+        uses: ServiceNow/servicenow-devops-change@v7.0.0
         with:
           # devops-integration-user-name: '${{ secrets.SN_DEVOPS_USER }}'
           # devops-integration-user-password: '${{ secrets.SN_DEVOPS_PASSWORD }}'
@@ -207,7 +207,7 @@ jobs:
       change-request-number: '${{ steps.get_change.outputs.change-request-number }}'
     steps:
       - name: ServiceNow DevOps Get Change
-        uses: ServiceNow/servicenow-devops-get-change@main
+        uses: ServiceNow/servicenow-devops-get-change@v7.0.0
         id: get_change
         with:
           instance-url: '${{ secrets.SN_INSTANCE_URL }}'
@@ -229,7 +229,7 @@ jobs:
     if: always()
     steps:
       - name: ServiceNow DevOps Update Change
-        uses: ServiceNow/servicenow-devops-update-change@main
+        uses: ServiceNow/servicenow-devops-update-change@v7.0.0
         id: update_change
         with:
           instance-url: '${{ secrets.SN_INSTANCE_URL }}'
